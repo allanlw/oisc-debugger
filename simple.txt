@@ -1,0 +1,46 @@
+
+simple:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00031337 <.text>:
+   31337:	90                   	nop
+   31338:	bd ac 23 03 00       	mov    $0x323ac,%ebp
+   3133d:	89 ec                	mov    %ebp,%esp
+   3133f:	eb 00                	jmp    0x31341
+   31341:	39 e5                	cmp    %esp,%ebp
+   31343:	7f 59                	jg     0x3139e
+   31345:	58                   	pop    %eax
+   31346:	5b                   	pop    %ebx
+   31347:	59                   	pop    %ecx
+   31348:	85 c0                	test   %eax,%eax
+   3134a:	7c 2f                	jl     0x3137b
+   3134c:	85 db                	test   %ebx,%ebx
+   3134e:	7c 14                	jl     0x31364
+   31350:	8d 44 85 00          	lea    0x0(%ebp,%eax,4),%eax
+   31354:	8b 00                	mov    (%eax),%eax
+   31356:	8d 5c 9d 00          	lea    0x0(%ebp,%ebx,4),%ebx
+   3135a:	29 03                	sub    %eax,(%ebx)
+   3135c:	7f e3                	jg     0x31341
+   3135e:	8d 64 8d 00          	lea    0x0(%ebp,%ecx,4),%esp
+   31362:	eb dd                	jmp    0x31341
+   31364:	8d 4c 85 00          	lea    0x0(%ebp,%eax,4),%ecx
+   31368:	ba 01 00 00 00       	mov    $0x1,%edx
+   3136d:	bb 01 00 00 00       	mov    $0x1,%ebx
+   31372:	b8 04 00 00 00       	mov    $0x4,%eax
+   31377:	cd 80                	int    $0x80
+   31379:	eb c6                	jmp    0x31341
+   3137b:	8d 74 9d 00          	lea    0x0(%ebp,%ebx,4),%esi
+   3137f:	b9 a8 23 03 00       	mov    $0x323a8,%ecx
+   31384:	ba 01 00 00 00       	mov    $0x1,%edx
+   31389:	31 db                	xor    %ebx,%ebx
+   3138b:	b8 03 00 00 00       	mov    $0x3,%eax
+   31390:	cd 80                	int    $0x80
+   31392:	b8 a8 23 03 00       	mov    $0x323a8,%eax
+   31397:	0f b6 00             	movzbl (%eax),%eax
+   3139a:	01 06                	add    %eax,(%esi)
+   3139c:	eb a3                	jmp    0x31341
+   3139e:	b8 01 00 00 00       	mov    $0x1,%eax
+   313a3:	31 db                	xor    %ebx,%ebx
+   313a5:	cd 80                	int    $0x80
